@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-// The entry: one out-of-office reply, a single line.
+// The entry: one out-of-office reply on a single line.
 const reply =
   "I'm out of office until Monday. " +
   "My auto-reply just got an auto-reply from yours, " +
@@ -18,7 +18,7 @@ function main() {
   const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, "entry.txt"), reply, "utf8");
-  console.log("wrote entry.txt (" + chars + " chars) to " + outDir);
+  console.log("entry.txt written (" + chars + " chars) to " + outDir);
 }
 
 main();
